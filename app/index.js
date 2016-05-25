@@ -6,9 +6,9 @@ var ReactDOM = require('react-dom');
 class HelloWorld extends React.Component {
   render() {
     return (
-      <div> Hello ReactJS Program! </div>
+      <div> Hello {this.props.name}! </div>
     );
   }
 }
 
-ReactDOM.render(<HelloWorld />, document.getElementById('app'));
+ReactDOM.render(<HelloWorld name="Emma" />, document.getElementById('app'));
