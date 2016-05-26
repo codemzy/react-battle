@@ -1,4 +1,5 @@
 var React = require('react');
+var Prompt = require('../components/Prompt');
 
 class PromptContainer extends React.Component {
     constructor(props, context) {
@@ -19,7 +20,6 @@ class PromptContainer extends React.Component {
     _submitUser(e) {
         e.preventDefault();
         var username = this.state.username;
-        console.log(username);
         this.setState({
            username: ''
         });
@@ -41,19 +41,7 @@ class PromptContainer extends React.Component {
     
     render() {
         return (
-          <div className='jumbotron col-sm-6 col-sm-offset-3 text-center'>
-            <h1>{this.props.route.header}</h1>
-            <div className="col-sm-12">
-                <form onSubmit={this._submitUser.bind(this)}>
-                    <div className="form-group">
-                        <input className="form-control" placeholder="Github Username" type="text" value={this.state.username} onChange={this._updateUser.bind(this)} />
-                    </div>
-                    <div className="form-group col-sm-4 col-sm-offset-4">
-                        <button className="btn btn-block btn-success" type="submit">Continue</button>
-                    </div>
-                </form>
-            </div>
-          </div>
+          <Prompt submitUser={this._submitUser.bind(this)} updateUser={this._updateUser.bind(this)} header={this.props.route.header} username={this.state.username} />
         );
     }
 }
