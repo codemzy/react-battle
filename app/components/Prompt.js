@@ -1,6 +1,11 @@
 var React = require('react');
 
 class Prompt extends React.Component {
+    
+    constructor(props) {
+        super(props);
+    }
+    
     render() {
         return (
           <div className='jumbotron col-sm-6 col-sm-offset-3 text-center'>
@@ -19,5 +24,12 @@ class Prompt extends React.Component {
         );
     }
 }
+
+Prompt.propTypes = {
+    header: React.PropTypes.string.isRequired,
+    updateUser: React.PropTypes.func.isRequired,
+    submitUser: React.PropTypes.func.isRequired,
+    username: React.PropTypes.string.isRequired
+};
 
 module.exports = Prompt;
