@@ -1,5 +1,6 @@
 var React = require('react');
 var ConfirmBattle = require('../components/ConfirmBattle');
+var githubHelpers = require('../utils/githubHelpers');
 
 class ConfirmBattleContainer extends React.Component {
     constructor(props, context) {
@@ -14,6 +15,7 @@ class ConfirmBattleContainer extends React.Component {
     componentDidMount() {
         let query = this.props.location.query;
         // Fetch info from github then update state
+        githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo]);
     }
     
     render() {
