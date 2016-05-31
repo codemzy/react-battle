@@ -7,12 +7,18 @@ class ConfirmBattleContainer extends React.Component {
         context.router;
         this.state = {
             isLoading: true,
-            playerInfo: []
+            playersInfo: []
         };
     }
+    
+    componentDidMount() {
+        let query = this.props.location.query;
+        // Fetch info from github then update state
+    }
+    
     render() {
         return (
-          <ConfirmBattle />
+          <ConfirmBattle isLoading={this.state.isLoading} playersInfo={this.state.playersInfo} />
         );
     }
 }
