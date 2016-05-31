@@ -15,7 +15,10 @@ class ConfirmBattleContainer extends React.Component {
     componentDidMount() {
         let query = this.props.location.query;
         // Fetch info from github then update state
-        githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo]);
+        githubHelpers.getPlayersInfo([query.playerOne, query.playerTwo])
+            .then(function(players) {
+                console.log(players);
+            });
     }
     
     render() {
