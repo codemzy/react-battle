@@ -13,7 +13,6 @@ class ResultsContainer extends React.Component {
     }
     
     componentDidMount() {
-        console.log(this.props.location.state.playersInfo);
         // Fetch scores from githubHelpers then update state
         githubHelpers.battle(this.props.location.state.playersInfo)
             .then(function(scores) {
