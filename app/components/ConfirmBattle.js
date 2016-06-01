@@ -12,4 +12,9 @@ function ConfirmBattle (props) {
     }
 }
 
+ConfirmBattle.propTypes = {
+    isLoading: React.PropTypes.bool.isRequired,
+    playersInfo: React.PropTypes.array.isRequired
+};
+
 module.exports = ConfirmBattle;
