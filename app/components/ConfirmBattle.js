@@ -3,13 +3,18 @@ var Link = require('react-router').Link;
 var UserDetailsWrapper = require('./UserDetailsWrapper');
 var UserDetails = require('./UserDetails');
 var styles = require('../styles');
+var MainContainer = require('./MainContainer');
 
 function ConfirmBattle (props) {
     if (props.isLoading === true) {
-         return( <p> Loading </p> );
+         return ( 
+             <MainContainer>
+                <p> Loading </p> 
+             </MainContainer>
+        );
     } else {
         return( 
-            <div className="jumbotron col-sm-12 text-center">
+            <MainContainer>
                 <h1>Confirm Players</h1>
                 <div className='col-sm-8 col-sm-offset-2 col-lg-6 col-lg-offset-3'>
                   <UserDetailsWrapper header='Player One'>
@@ -29,7 +34,7 @@ function ConfirmBattle (props) {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </MainContainer>
         );
     }
 }

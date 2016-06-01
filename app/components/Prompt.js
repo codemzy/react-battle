@@ -1,10 +1,11 @@
 var React = require('react');
+var MainContainer = require('./MainContainer');
 
 function Prompt (props) {
         return (
-          <div className='jumbotron col-sm-6 col-sm-offset-3 text-center'>
+          <MainContainer>
             <h1>{props.header}</h1>
-            <div className="col-sm-12">
+            <div className="col-sm-6 col-sm-offset-3">
                 <form onSubmit={props.submitUser}>
                     <div className="form-group">
                         <input className="form-control" placeholder="Github Username" type="text" value={props.username} onChange={props.updateUser} />
@@ -14,7 +15,7 @@ function Prompt (props) {
                     </div>
                 </form>
             </div>
-          </div>
+          </MainContainer>
         );
 }
 
