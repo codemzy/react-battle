@@ -10,7 +10,7 @@ class Home extends React.Component {
     return (
       <MainContainer>
         <h1>Github Battle</h1>
-        <p className="lead">Some fancy motto</p>
+        <p className="lead">Who rules Github?</p>
         <Link to='/playerOne'>
           <button type='button' className='btn btn-lg btn-success'>Get Started</button>
         </Link>

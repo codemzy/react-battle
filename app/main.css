@@ -12,3 +12,7 @@
 .appear-leave {
   opacity: 0;
 }
+
+.jumbotron {
+    min-height: 500px;
+}
