@@ -7,7 +7,7 @@ class Main extends React.Component {
     return (
       <div className='main-container'>
         <ReactCSSTransitionGroup transitionName="appear" transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-          {this.props.children}
+          {React.cloneElement(this.props.children, {key: this.props.location.pathname})}
         </ReactCSSTransitionGroup>
       </div>
     );
