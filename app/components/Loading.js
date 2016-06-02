@@ -1,11 +1,12 @@
 var React = require('react');
+var MainContainer = require('./MainContainer');
 
 class Loading extends React.Component {
     constructor(props) {
         super(props);
-        this.originalText = 'Loading';
+        this.originalText = this.props.text;
         this.state = {
-            text: 'Loading'
+            text: this.originalText
         };
     }
     
@@ -21,7 +22,7 @@ class Loading extends React.Component {
                    text: this.state.text + '.' 
                 });
             }
-        }.bind(this), 300);
+        }.bind(this), 200);
 
     }
     
@@ -37,5 +38,13 @@ class Loading extends React.Component {
         );
     }
 }
+
+Loading.propTypes = {
+    text: React.PropTypes.string
+};
+
+Loading.defaultProps = {
+    text: 'Loading'
+};
 
 module.exports = Loading;

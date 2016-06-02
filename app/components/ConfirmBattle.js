@@ -4,13 +4,12 @@ var UserDetailsWrapper = require('./UserDetailsWrapper');
 var UserDetails = require('./UserDetails');
 var styles = require('../styles');
 var MainContainer = require('./MainContainer');
+var Loading = require('./Loading');
 
 function ConfirmBattle (props) {
     if (props.isLoading === true) {
          return ( 
-             <MainContainer>
-                <p> Loading </p> 
-             </MainContainer>
+             <Loading text='Loading players' />
         );
     } else {
         return( 
